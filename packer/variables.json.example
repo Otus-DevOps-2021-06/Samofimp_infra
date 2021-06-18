@@ -1,7 +1,7 @@
 {
-        "folder_id": "print folder id from YC",
-        "service_account_key_file": "IAM keys",
+        "folder_id": "aaaaaaaaaaaaaaaaa",
+        "service_account_key_file": "aa/aaa/aaa",
         "disk_type": "network-hdd",
         "image_name": "unique name",
-        "source_image_id": "ubuntu id"
+        "source_image_id": "ubuntuid"
 }
