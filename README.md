@@ -8,7 +8,7 @@ packer build -var-file=variables.json ./ubuntu16.json
 
 Необходимо создать собственный **variables.json** в папке **packer**.
 
-Пример файла с переменными находится в **packer/variables.json.examples**.
+Пример файла с переменными находится в **packer/variables.json.example**.
 
 ## Обязательные параметры
 * **folder_id**
