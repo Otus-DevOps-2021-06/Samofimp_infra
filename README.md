@@ -18,3 +18,13 @@ packer build -var-file=variables.json ./ubuntu16.json
 ## Опциональные параметры
 * **image_name**
 * **disk_type**
+
+## Билд bake-образа
+~~ bash
+packer build -var-file=variables.json ./immutable.json
+~~
+
+## Развёртывание ВМ
+Запустить скрипт **config-scripts/create-reddit-vm.sh**
+
+Для параметра **--ssh-key** указать свой публичный ключ
