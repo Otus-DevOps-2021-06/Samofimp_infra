@@ -24,3 +24,7 @@ variable "service_account_key_file" {
 variable "private_key_file" {
   description = "Path to private key on VM under user ubuntu"
 }
+variable "region_id" {
+  description = "Region identificator"
+  default     = "ru-central1"
+}
