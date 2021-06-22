@@ -1,17 +1,12 @@
 terraform {
-  required_providers {
-    yandex = {
-      source = "yandex-cloud/yandex"
-    }
-  }
 
   backend "s3" {
     endpoint   = "storage.yandexcloud.net"
     bucket     = "reddit-app-bucket"
     region     = "ru-central1"
-    key        = "<путь к файлу состояния в бакете>/<имя файла состояния>.tfstate"
-    access_key = "<идентификатор статического ключа>"
-    secret_key = "<секретный ключ>"
+    key        = "prod/terraform.tfstate"
+    access_key = "aaaaaaaaaaaaaaa"
+    secret_key = "key.json"
 
     skip_region_validation      = true
     skip_credentials_validation = true
@@ -19,8 +14,9 @@ terraform {
 }
 
 provider "yandex" {
-  token     = "<OAuth или статический ключ сервисного аккаунта>"
-  cloud_id  = "<идентификатор облака>"
-  folder_id = "<идентификатор каталога>"
-  zone      = "<зона доступности по умолчанию>"
+  token     = "service_account_key>"
+  cloud_id  = "cloudid"
+  folder_id = "folderid"
+  zone      = "zoneid"
 }
+
