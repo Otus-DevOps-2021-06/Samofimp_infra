@@ -19,6 +19,16 @@
         "type": "shell",
         "script": "scripts/install_ruby.sh",
         "execute_command": "sudo {{.Path}}"
+        },
+        {
+        "type": "file",
+        "source": "files/puma-reddit.service",
+        "destination": "puma-reddit.service"
+        },
+        {
+        "type": "shell",
+        "script": "files/install_git.sh",
+        "execute_command": "sudo {{.Path}}"
         }
     ]
 }
