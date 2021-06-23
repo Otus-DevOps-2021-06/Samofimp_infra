@@ -1,0 +1,13 @@
+- name: Build application instance image
+  hosts: all
+  become: true
+  tasks:
+  - name: Installing ruby, rubygems and git packages
+    apt:
+      name: "{{ item }}"
+      update_cache: yes
+    with_items:
+      - ruby-full
+      - ruby-bundler
+      - build-essential
+      - git

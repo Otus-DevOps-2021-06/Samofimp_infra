@@ -1,5 +1,49 @@
-# Samofimp_infra
-Samofimp Infra repository
+# Домашнее задание №5
+## Подключение к someinternalhost в одну строку
+~~~ bash
+ssh -J appuser@bastion_host_ip appuser@psomeinternalhost_ip
+~~~
+
+# Домашнее задание №7
+## Команда для запуска билда образа
+~~~ bash
+packer build -var-file=variables.json ./ubuntu16.json
+~~~
+
+Необходимо создать собственный **variables.json** в папке **packer**.
+
+Пример файла с переменными находится в **packer/variables.json.example**.
+
+## Обязательные параметры
+* **folder_id**
+* **service_account_key_file**
+* **source_image_id**
+
+## Опциональные параметры
+* **image_name**
+* **disk_type**
+
+## Билд bake-образа
+~~ bash
+packer build -var-file=variables.json ./immutable.json
+~~
+
+## Развёртывание ВМ
+Запустить скрипт **config-scripts/create-reddit-vm.sh**
+
+Для параметра **--ssh-key** указать свой публичный ключ
+
+# Домашнее задание №8, 9
+## Развёртывание ВМ с помощью Terraform
+~~~ bash
+terraform init
+terraform apply
+~~~
+
+Необходимо задать собственные переменные в файле **terraform.tfvars** по примеру из **terraform.tfvars.example**
+
+
+# Домашнее задание №10
 
 Конфигурационные файлы Ansible расположены в директории **ansible** соответственно.
 
@@ -13,3 +57,14 @@ Samofimp Infra repository
 * ignored - число операций, которые были выполнены с ошибкой, но проигнорированы из-за **ignore_errors: true**
 
 При выполнении playbook с уже склонированным репозиторием никаких изменений на ВМ не происходит, поэтому в PLAY RECAP значение changed=0. Однако, после удаления репозитория и выполнения playbook происходит новое клонирование репозитория, изменения применяются и changed=1.
+
+# Домашнее задание №11
+
+Были разработаны Ansible плейбуки для инстанса с приложением, базой данных и плейбук для деплоя.
+
+Запуск всех плейбуков в нужном порядке производится командой:
+~~~ bash
+ansible-playbook site.yml
+~~~
+
+Также для сборки образов Packer были изменены провижинеры на Ansible **packer_app.yml** и **packer_db.yml**.
