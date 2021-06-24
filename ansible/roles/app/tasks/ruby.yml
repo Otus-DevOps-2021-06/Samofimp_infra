@@ -1,0 +1,12 @@
+---
+- name: Installing ruby, rubygems and git packages
+  tags:
+  - ruby
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - ruby-full
+    - ruby-bundler
+    - build-essential
+    - git

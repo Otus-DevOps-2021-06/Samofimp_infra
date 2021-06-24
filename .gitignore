@@ -1,10 +1,20 @@
+# Packer variable file
 packer/variables.json
+# Terraform files and directories
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
 *.tfvars
 terraform/.terraform/
 terraform/.terraform.lock.hcl
+# Ansible files
 *.retry
 ansible/roles/jdauphant.nginx/
 ansible/vault.key
+# Vagrant & molecule files and directories
+ansible/.vagrant/
+ansible/*.log
+ansible/*.pyc
+ansible/.molecule
+ansible/.cache
+ansible/.pytest_cache
