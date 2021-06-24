@@ -85,3 +85,27 @@ ansible-playbook playbooks/site.yml
 ~~~ bash
 ansible-playbook -i environments/prod/inventory playbooks/site.yml
 ~~~
+
+# Домашнее задание №13
+
+Запуск машин с помощью Vagrant (производится в директории **ansible**):
+~~~ bash
+vagrant up
+~~~
+Удаление созданных машин:
+~~~ bash
+vagrant destroy -f
+~~~
+
+*Приложение проксируется с помощью nginx, доступно по адресу 10.10.10.20 на 80 порту.*
+
+Произведено тестирование роли db (версия molecule=2.22). Выполняется проверка, что:
+* сервис MongoDB запущен на машине,
+* в файле конфигурации MongoDB задан bindIp,
+* база данных слушает по порту 27017.
+Директория: 
+ansible/roles/db/molecule/default/tests
+
+~~~ bash
+molecule verify
+~~~
