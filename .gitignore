@@ -6,3 +6,5 @@ packer/variables.json
 terraform/.terraform/
 terraform/.terraform.lock.hcl
 *.retry
+ansible/roles/jdauphant.nginx/
+ansible/vault.key

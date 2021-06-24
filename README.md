@@ -68,3 +68,20 @@ ansible-playbook site.yml
 ~~~
 
 Также для сборки образов Packer были изменены провижинеры на Ansible **packer_app.yml** и **packer_db.yml**.
+
+# Домашнее задание №12
+
+На основе плейбуков созданы раздельные роли - **app** и **db**.
+
+Описаны окружения **prod** и **stage**.
+
+Созданы пользователи, проведена работа с Ansible Vault.
+
+Выполнение плейбука в **stage** окружении:
+~~~ bash
+ansible-playbook playbooks/site.yml
+~~~
+Выполнение плейбука в **prod** окружении:
+~~~ bash
+ansible-playbook -i environments/prod/inventory playbooks/site.yml
+~~~
